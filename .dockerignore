@@ -1,0 +1,24 @@
+# Ignore build folders (IMPORTANT: Local Windows builds won't work in Linux Docker)
+**/bin/
+**/obj/
+
+# Ignore IDE specific folders
+.vs/
+.vscode/
+
+# Ignore Docker files
+Dockerfile
+.dockerignore
+docker-compose*
+
+# Ignore Git
+.git
+.gitignore
+
+# Ignore sensitive files (Don't leak your local DB strings or secrets)
+**/appsettings.Development.json
+**/appsettings.Production.json
+
+# Ignore logs and temp files
+*.log
+.DS_Store
