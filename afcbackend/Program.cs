@@ -88,8 +88,8 @@ var app = builder.Build();
 // ============================================================================
 
 // Development-specific middleware
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI(options =>
     {
@@ -97,13 +97,13 @@ if (app.Environment.IsDevelopment())
         options.RoutePrefix = "swagger";  // Access at: http://localhost:7116/swagger
     });
     app.UseDeveloperExceptionPage();
-}
-else
-{
-    // Production error handling
-    app.UseExceptionHandler("/Error");
-    app.UseHsts();  // HTTP Strict Transport Security
-}
+//}
+//else
+//{
+//    // Production error handling
+//    app.UseExceptionHandler("/Error");
+//    app.UseHsts();  // HTTP Strict Transport Security
+//}
 
 // Redirect HTTP to HTTPS
 app.UseHttpsRedirection();
