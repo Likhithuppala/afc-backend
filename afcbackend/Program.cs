@@ -134,12 +134,9 @@ using (var scope = app.Services.CreateScope())
     {
         var context = services.GetRequiredService<AfcDbContext>();
 
-        // Auto-apply pending migrations in development
-        if (app.Environment.IsDevelopment())
-        {
-            await context.Database.MigrateAsync();
-            Console.WriteLine("✅ Database migrations applied successfully.");
-        }
+        // Remove the 'if IsDevelopment' check so it runs on Render too!
+        await context.Database.MigrateAsync();
+        Console.WriteLine("✅ Database migrations applied successfully.");
     }
     catch (Exception ex)
     {
