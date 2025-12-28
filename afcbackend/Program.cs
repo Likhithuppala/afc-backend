@@ -152,4 +152,8 @@ Console.WriteLine(" AFC Backend API is running...");
 Console.WriteLine($" Environment: {app.Environment.EnvironmentName}");
 Console.WriteLine($" Swagger UI: https://localhost:7116/swagger");
 
+// This will redirect the root URL (/) to the Swagger page (/swagger)
+app.MapGet("/", () => Results.Redirect("/swagger"));
+
+
 app.Run();
